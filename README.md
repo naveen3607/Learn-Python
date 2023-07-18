@@ -19,3 +19,12 @@ Operators
     Arithmetic Operators
     Assignment Operators
     Comparison Operators
+
+Syntaxes:
+Conditional Statements;
+Bill Calculator;
+Guess a Number;
+Rock-Paper-Scissors Game;
+7 Up or Down Game
+Career Guidance
+Certificate Eligibility
