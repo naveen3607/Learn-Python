@@ -2,14 +2,20 @@
 
 Basic syntax of python
 
-Variables:
-Rules for naming a variables
-It should start with a-z, A-Z, _
-It should only contain a-z, A-Z, _, 0-9
-Case Sensitive
-Can't use reserved keywords
+Rules for naming a variables:
+    It should start with a-z, A-Z, _
+    It should only contain a-z, A-Z, _, 0-9
+    Case Sensitive
+    Can't use reserved keywords
 
 Datatypes
-Integer (int)
-Float (float)
-String (str)
+    Integer (int)
+    Float (float)
+    String (str)
+
+Asking input from user
+
+Operators
+    Arithmetic Operators
+    Assignment Operators
+    Comparison Operators
