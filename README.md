@@ -1,10 +1,10 @@
 # Learn-Python
 
-Basic syntax of python
+The basic syntax of Python
 
-Rules for naming a variables:
+Rules for naming variables:
     It should start with a-z, A-Z, _
-    It should only contain a-z, A-Z, _, 0-9
+    It should only contain a-z, A-Z, _, and 0-9
     Case Sensitive
     Can't use reserved keywords
 
@@ -13,7 +13,7 @@ Datatypes
     Float (float)
     String (str)
 
-Asking input from user
+Asking for input from the user
 
 Operators
     Arithmetic Operators
