@@ -13,7 +13,7 @@ Area = a * b
 print(Area)
 
 #Arithmetic Operators in Python
-a = -14
+a = 14
 b = 5
 c = a**b
 print(c)
