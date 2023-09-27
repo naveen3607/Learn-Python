@@ -1,4 +1,4 @@
-#input from user
+# input from user
 a = input("Enter your name = ")
 print(f"you have entered {a}")
 
@@ -12,7 +12,7 @@ b = int(input("Enter the breadth = "))
 Area = a * b
 print(Area)
 
-#Arithmetic Operators in Python
+# Arithmetic Operators in Python
 a = 14
 b = 5
 c = a**b
@@ -22,24 +22,24 @@ print(d)
 e = a // b
 print(e)
 
-#Assignment Operators in Python
+# Assignment Operators in Python
 a = 3
-a+=3
+a += 3
 print(a)
-a-=3
+a -= 3
 print(a)
-a/=3
+a /= 3
 print(a)
-a*=3
+a *= 3
 print(a)
 
-#Comparison Operators in Python (Answer will always be in Boolean)
+# Comparison Operators in Python (Answer will always be in Boolean)
 # >, <, >=, <=, ==, !=
 a = 10
 b = 10
-print(a>b)
-print(a<b)
-print(a>=b)
-print(a<=b)
-print(a==b)
-print(a!=b)
+print(a > b)
+print(a < b)
+print(a >= b)
+print(a <= b)
+print(a == b)
+print(a != b)

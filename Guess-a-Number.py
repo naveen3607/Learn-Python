@@ -1,6 +1,6 @@
-#Guess a number
+# Guess a number
 import random
-secret_number = random.randint(0,10)
+secret_number = random.randint(0, 10)
 user_number = int(input("Enter the user number = "))
 print(secret_number)
 if secret_number == user_number:
