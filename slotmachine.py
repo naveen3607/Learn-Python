@@ -1,11 +1,13 @@
 import random
 
-MAX_LINES = random[1:6]
+from Tools.scripts.make_ctype import values
+
+MAX_LINES = 3
 MAX_BET = 100
 MIN_BET = 1
 
-ROWS = MAX_LINES
-COLS = MAX_LINES
+ROWS = 4
+COLS = 5
 
 symbol_count = {
     "A": 2,
@@ -14,10 +16,31 @@ symbol_count = {
     "D": 8
 }
 
+symbol_value = {
+    "A": 2,
+    "B": 4,
+    "C": 3,
+    "D": 2
+}
+
+
+def check_winnings(columns, lines, bet):
+    winnings = 0
+    for line in range(lines):
+        symbol = columns[0][line]
+        for column in columns:
+            symbol_to_check = column[line]
+            if symbol != symbol_to_check:
+                break
+        else:
+            winnings += values[symbol] * bet
+
+    return winnings
+
 
 def get_slot_machine_spin(rows, cols, symbols):
     all_symbols = []
-    for symbol, symbol_count in symbols.item():
+    for symbol, symbol_count in symbols.items():
         for _ in range(symbol_count):
             all_symbols.append(symbol)
 
@@ -33,6 +56,17 @@ def get_slot_machine_spin(rows, cols, symbols):
         columns.append(column)
 
     return columns
+
+
+def print_slot_machine(columns):
+    for row in range(len(columns[0])):
+        for i, column in enumerate(columns):
+            if i != len(columns) - 1:
+                print(column[row], end=" | ")
+            else:
+                print(column[row], end="")
+
+        print()
 
 
 def deposit():
@@ -87,8 +121,9 @@ def main():
             print(f"You do not have enough to bet that amount, your current balance is: ${balance} ")
         else:
             break
-
     print(f"You are betting ${bet_amount} on {lines} lines. Total bet is equal to ${total_bet_amount}")
+    slots = get_slot_machine_spin(ROWS, COLS, symbol_count)
+    print_slot_machine(slots)
 
 
 main()
