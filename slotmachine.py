@@ -1,13 +1,11 @@
 import random
 
-from Tools.scripts.make_ctype import values
-
 MAX_LINES = 3
 MAX_BET = 100
 MIN_BET = 1
 
-ROWS = 4
-COLS = 5
+ROWS = 3
+COLS = 3
 
 symbol_count = {
     "A": 2,
@@ -17,14 +15,14 @@ symbol_count = {
 }
 
 symbol_value = {
-    "A": 2,
+    "A": 5,
     "B": 4,
     "C": 3,
     "D": 2
 }
 
 
-def check_winnings(columns, lines, bet_amount):
+def check_winnings(columns, lines, bet_amount, values):
     winnings = 0
     winnings_lines = []
     for line in range(lines):
@@ -114,7 +112,6 @@ def get_bet():
 
 
 def spin(balance):
-    balance = deposit()
     lines = get_number_of_lines()
     while True:
         bet_amount = get_bet()
@@ -126,7 +123,7 @@ def spin(balance):
     print(f"You are betting ${bet_amount} on {lines} lines. Total bet is equal to ${total_bet_amount}")
     slots = get_slot_machine_spin(ROWS, COLS, symbol_count)
     print_slot_machine(slots)
-    winnings, winning_lines = check_winnings(slots, lines, bet_amount)
+    winnings, winning_lines = check_winnings(slots, lines, bet_amount, symbol_value)
     print(f"you won ${winnings}.")
     print(f"You won on lines: ", *winning_lines)
     return winnings - total_bet_amount
