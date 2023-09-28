@@ -1,6 +1,11 @@
-MAX_LINES = 3
+import random
+
+MAX_LINES = random[1:6]
 MAX_BET = 100
 MIN_BET = 1
+
+ROWS = MAX_LINES
+COLS = MAX_LINES
 
 
 def deposit():
