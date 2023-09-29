@@ -3,6 +3,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
 from kivy.uix.textinput import TextInput
 
+
 class MainApp(App):
     def build(self):
         self.icon = "calculator.png"
@@ -11,14 +12,15 @@ class MainApp(App):
         self.last_button = None
 
         main_layout = BoxLayout(orientation="vertical")
-        self.solution = TextInput(background_color="black", foreground_color="white")
+        self.solution = TextInput(background_color="black", foreground_color="red", multiline=False,
+                                  halign="right", font_size=55, readonly=True)
 
         main_layout.add_widget(self.solution)
         buttons = [
-            ["7", "8", "9", "/"],
-            ["4", "5", "6", "*"],
-            ["1", "2", "3", "+"],
-            [".", "0", "C", "-"]
+            ["7", "8", "9", "/", "%"],
+            ["4", "5", "6", "*", "tan"],
+            ["1", "2", "3", "+", "cos"],
+            [".", "0", "C", "-", "sin"]
         ]
 
         for row in buttons:
@@ -48,7 +50,22 @@ class MainApp(App):
         if button_text == "C":
             self.solution.text = ""
         else:
-            if current and ()
+            if current and (self.last_was_operator and button_text in self.operators):
+                return
+            elif current == "" and button_text in self.operators:
+                return
+            else:
+                new_text = current + button_text
+                self.solution.text = new_text
+
+        self.last_button = button_text
+        self.last_was_operator = self.last_button in self.operators
+
+    def on_solution(self, instance):
+        text = self.solution.text
+        if text:
+            solution = str(eval(self.solution.text))
+            self.solution.text = solution
 
 
 if __name__ == "__main__":
