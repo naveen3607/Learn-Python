@@ -1,5 +1,5 @@
 # Fibonacci Series
-n = int(input("Enter the total number of values in the series, n"))
+n = int(input("Enter the total number of values in the series,n = "))
 
 
 def fibonacci(n: int):
